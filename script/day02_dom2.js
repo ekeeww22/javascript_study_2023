@@ -24,4 +24,3 @@ console.log(firstClsQ, lastClsQ[0]);
 
 //querySelector, querySelectorAll
 // 객체가 2개 이상일 때 태그 작성 순서상 한개만 인식하고 싶다면
-
