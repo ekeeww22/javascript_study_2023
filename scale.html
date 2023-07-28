@@ -6,21 +6,23 @@
     <title>적정체중 테스트</title>
 </head>
 <body>
+    
     <input type="text" placeholder="키를 입력해주세요" autofocus id="userheight">
+    <input type="text" placeholder="몸무게를 입력해주세요" id="userweight">
     <button type="submit" id="btn">적정체중확인</button>
 
     <script>
         // 변수생성 = 신장
         let userHeight = document.querySelector('#userheight')
-        const btn = document.querySelector('#btn')
+        let userWeight = document.querySelector('#userweight')
         let nomal_w = 0
+        const btn = document.querySelector('#btn')
         
-        
-        nomal_w = (userHeight-100)*0.9;
-        console.log(nomal_w);
         btn.addEventListener('click',function(){
-            uerheight.value = `적정 체중은 ${(userHeight-100)*0.9}kg 입니다.`;
+            
+            window.alert(`적정 체중은 ${(userHeight-100)*0.9}kg이며 ${nomal_w-userWeight}kg 초과되셨습니다.`);
         });
+        
     </script>
 </body>
 </html>
