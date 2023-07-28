@@ -18,5 +18,24 @@
         <button type="button" id="answer_btn">정답보기</button>
         <input type="text" id="result" placeholder="답을 입력하세요" style="background:rgba(255,255,255,0.7)">
     </div>
+    <script>
+        // 변수목록 = 첫 날, 둘째 날, 셋째 날 데이터, 정답보기버튼,  답입력칸
+        let day1 = 10
+        let day2 = 5
+        let day3 = 8
+        const answer_btn = document.querySelector('#answer_btn');
+        const result_input = document.querySelector('#result');
+        console.log(answer_btn, result_input);
+        // 정답보기 (answer_btn) 클릭 시 자바스크립트 호출되면서
+        // 정답, 오답 구분되는 결과 만들기
+        answer_btn.addEventListener('click',function(){
+            // window.alert('오답입니다!');
+            // 객체.innerHTML 속성은 form 외 나머지 태그들의 내용을 읽거나 수정할 때 
+            // 객체.value 속성은 form input 태그의 내용을 읽거나 수정할 때
+            // result_input.value = '정답입니다';
+            // 결과예 ) 정답은 23장 입니다!
+            result_input.value = `정답은 ${day1+day2+day3}장 입니다!`;
+        });
+    </script>
 </body>
 </html>

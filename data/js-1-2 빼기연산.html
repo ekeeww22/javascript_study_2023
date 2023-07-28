@@ -13,5 +13,19 @@
         <button type="button" id="answer_btn">정답보기</button>
         <input type="text" id="result" placeholder="답을 입력하세요">
     </div>
+    <script>
+        let money = 10000
+        let snack = 2000
+        let iceCream = 1000
+        let total = 0
+        const answer_btn = document.querySelector('#answer_btn');
+        const result = document.querySelector('#result');
+        console.log(answer_btn, result);
+        answer_btn.addEventListener('click',function(){
+            total = money-snack-iceCream;
+            console.log(total);
+            result.value = `남은 돈은 ${total.toLocaleString('ko-kr')}원 입니다!`;
+        });
+    </script>
 </body>
 </html>
