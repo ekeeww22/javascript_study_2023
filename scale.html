@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>적정체중 테스트</title>
+</head>
+<body>
+    <input type="text" placeholder="키를 입력해주세요" autofocus id="userheight">
+    <button type="submit" id="btn">적정체중확인</button>
+
+    <script>
+        // 변수생성 = 신장
+        let userHeight = document.querySelector('#userheight')
+        const btn = document.querySelector('#btn')
+        let nomal_w = 0
+        
+        
+        nomal_w = (userHeight-100)*0.9;
+        console.log(nomal_w);
+        btn.addEventListener('click',function(){
+            uerheight.value = `적정 체중은 ${(userHeight-100)*0.9}kg 입니다.`;
+        });
+    </script>
+</body>
+</html>
