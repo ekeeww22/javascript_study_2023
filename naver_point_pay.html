@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js6 네이버포인트결제</title>
+    <link rel="shortcut icon" href="./images/naver.png" type="image/x-icon">
+    <link rel="icon" href="./images/naver.png" type="image/x-icon">
     <style>
         * {
             margin:0; padding:0; box-sizing:border-box; line-height:1.0;
@@ -31,7 +33,6 @@
             cursor:pointer; height:25px; font-size:0.915rem; margin-left:10px;
             background:#1fd771; color:#fff; border:0; padding:5px 2px;
         }
-        .n_point_wrap ul li .sub_contents #point_reset {display:none;}
     </style>
 </head>
 <body>
@@ -67,17 +68,33 @@
     **7) 사용포인트가 0원이 되면서 사용에 있던 포인트값이 다시 보유포인트로 복귀되게 만들기**
     -->
     <script>
-        const userPoint = document.querySelector('#user_point')
-        const usePoint = document.querySelector('#use_point')
+        const user_point = document.querySelector('#user_point')
+        const use_point = document.querySelector('#use_point')
         const pointAllBtn = document.querySelector('#point_all_btn')
         const resetBtn = document.querySelector('#point_reset')
-        console.log(pointAllBtn, userPoint, resetBtn)
-        userPoint.value = 1000
+        console.log(use_point, use_point, pointAllBtn, resetBtn)
+        user_point.value = 1000
+        let userPoint = Number(user_point.value)
+        let usePoint = Number(user_point.value)
+        user_point.value = userPoint.toLocaleString('ko-kr')
+        console.log(userPoint, typeof(userPoint))
+        resetBtn.style.display = 'none'
         pointAllBtn.addEventListener('click',function(){
-            usePoint.value = userPoint.value
-            userPoint.value = 0
+            if(usePoint >= 1){
+                resetBtn.style.display = 'inline-block'
+            }if(userPoint >= 1000){
+                use_point.value = userPoint.toLocaleString('ko-kr')
+                user_point.value = 0
+            }else{
+                resetBtn.style.display = 'none'
+                window.alert('1000원 이상 사용가능합니다.')
+            }
         })
-        if(userPoint.value >= 1000){}else{window.alert('1000원 이상 사용가능합니다.')}
+        resetBtn.addEventListener('click',function(){
+            user_point.value = usePoint.toLocaleString('ko-kr')
+            use_point.value = 0
+            resetBtn.style.display = 'none'
+        })
     </script>
 </body>
 </html>
