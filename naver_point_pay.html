@@ -68,6 +68,29 @@
     **7) 사용포인트가 0원이 되면서 사용에 있던 포인트값이 다시 보유포인트로 복귀되게 만들기**
     -->
     <script>
+        /* 
+        < 풀이 >
+        const user_point = document.querySelector('#user_point') - 보유 포인트
+        const use_point = document.querySelector('#use_point') - 사용 포인트
+        const resetBtn = document.querySelector('#point_reset') - X 버튼
+        const pointAllBtn = document.querySelector('#point_all_btn') - 전액사용 버튼
+        user_point.value = 1000
+        resetBtn.style.display = 'none'
+        ponitAllBtn.addEventListener('click',function(){
+            if(user_point.value >= 1000){
+                use_point.value = user_point.value
+                user_point.value = 0
+                resetBtn.style.display = 'inline-block'
+            }else{
+                window.alert('1000원 이상 보유 시 사용가능합니다!')
+            }
+        }) // pointAllBtn click event end
+        resetBtn.addEventListener('click',function(){
+            user_point.value = use_point.value
+            use_point.value = 0
+            resetBtn.style.display = 'none'
+        })
+        */
         const user_point = document.querySelector('#user_point')
         const use_point = document.querySelector('#use_point')
         const pointAllBtn = document.querySelector('#point_all_btn')
@@ -95,6 +118,7 @@
             use_point.value = 0
             resetBtn.style.display = 'none'
         })
+        
     </script>
 </body>
 </html>
