@@ -9,7 +9,8 @@ main section .contents {color:#999; font-weight:700; margin-bottom:30px;}
 /* 카히스토리 영상 - 탭 제목, 내용 */
 main #video .tab_title {margin-bottom:30px;}
 main #video .tab_title a {padding:20px 35px; display: inline-block;}
-main #video .tab_title .active {border-bottom:5px solid rgb(0, 153, 255);}
+/* 탭 제목 활성화 디자인 + js class 호출용 */
+main #video .tab_title a.active {border-bottom:5px solid rgb(0, 153, 255);}
 main #video .tab_contents {}
 main #video .tab_contents .tab_c1 {position: relative;}
 main #video .tab_contents .tab_c1 img {width:200px; position:absolute; right:5%; bottom:-25%;}
@@ -22,6 +23,7 @@ main #menu .tab_title {display:flex; justify-content:center; border-bottom:1px s
 main #menu .tab_title a {
     width:160px; padding:15px 0; margin-right:10px; background:lime; position:relative; bottom:-1px;border:1px solid #ccc; background:#fff; border-bottom:1px solid #888;}
 main #menu .tab_title a:last-child {margin-right:0;}
+/* 탭 제목 활성화 디자인 + js class 호출용 */
 main #menu .tab_title a.active {
     border:1px solid #888; border-bottom:1px solid #fff; border-top:5px solid rgb(0, 153, 255);}
 /* 자주사용하는 메뉴 - 내용 */
